@@ -1,0 +1,46 @@
+
+Script de criação de dados
+
+CREATE TABLE raca (
+    id int identity(1,1) primary key,
+    nomeraca varchar(255),
+);
+
+
+CREATE TABLE animal (
+    id int identity(1,1),
+    nome varchar(30),
+    idade int,
+    sexo varchar(10),
+    dataentrada varchar(11),
+     racaid int
+     PRIMARY KEY (id),
+     FOREIGN KEY (racaid) REFERENCES raca(id)
+);
+
+
+CREATE TABLE pessoa (
+      id int identity(1,1),
+      nome varchar(30),
+      fone varchar(11),
+       PRIMARY KEY (id),
+);
+
+
+CREATE TABLE usuario (
+    id int identity(1,1),
+    nomeusuario varchar(10),
+     senha varchar(10),
+     PRIMARY KEY (id),
+);
+
+
+CREATE TABLE adocao (
+    id int identity(1,1),
+    DataAdoca varchar(30),
+    pessoaId int,
+    animalId int
+     PRIMARY KEY (id),
+     FOREIGN KEY (pessoaId) REFERENCES pessoa(id),
+    FOREIGN KEY (animalId) REFERENCES animal(id)
+);

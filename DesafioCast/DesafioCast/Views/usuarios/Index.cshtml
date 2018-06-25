@@ -1,0 +1,32 @@
+﻿@model IEnumerable<DesafioCast.Models.usuario>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+
+
+            @Html.DisplayNameFor(model => model.nomeusuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.senha)
+        </th>
+        <th></th>
+    </tr>
+
+    <input type="submit" value="index" class="btn btn-primary" />
+
+    <input type="submit" value="Login" class="btn btn-primary" />
+
+
+
+</table>

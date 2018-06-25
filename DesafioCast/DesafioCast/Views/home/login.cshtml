@@ -1,0 +1,54 @@
+﻿
+@model DesafioCast.Models.usuario
+
+@{
+    ViewBag.Title = "login";
+}
+
+
+@using (Html.BeginForm("login", "home", FormMethod.Post))
+{
+
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    if (@ViewBag.Message != null)
+    {
+        <div style="border:1px solid red">
+            @ViewBag.Message
+
+
+
+        </div>
+    }
+
+
+            @Html.DisplayNameFor(model => model.nomeusuario)
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.LabelFor(model => model.nomeusuario, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.TextBoxFor(model => model.nomeusuario, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.nomeusuario, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.LabelFor(model => model.senha, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.PasswordFor(model => model.senha, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.senha, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-3">
+                <input type="submit" value="Login" class="btn btn-primary" />
+            </div>
+            <div class=" col-md-3">
+                @Html.ActionLink(" Registrar", "Create", "Usuario")
+            </div>
+        </div>
+    </div>
+}
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}

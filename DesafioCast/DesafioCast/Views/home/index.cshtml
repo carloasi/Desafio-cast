@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<header>
+    <div id="app"></div>
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/classnames/2.2.5/index.min.js'></script>
+
+    <script src="~/Scripts/index.js"></script>
+</header>
+
+
+<br />
+<div class="container">
+    <div class="row">
+
+
+        <!-- Page Features -->
+        <div class="row text-center">
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card">
+
+                    <div class="card-body">
+                        <h4 class="card-title">Animais mais recente</h4>
+
+                        @if (@ViewBag.ultimodisponivel != null)
+                        {
+                            <p class="card-text">
+                                @ViewBag.ultimodisponivel, Nosso mais novo animal disponível para adoção.
+                            </p>
+                        }
+                        else
+                        {
+                            <p class="card-text">
+                                Ainda não existe nenhum animal disponível para adoção.
+                            </p>
+                        }
+
+                    </div>
+                   
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card">
+
+                    <div class="card-body">
+                        <h4 class="card-title">Adotado recentemente</h4>
+                        <p class="card-text">
+                            @ViewBag.ultimaadocao
+                        </p>
+                    </div>
+              
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card">
+
+                    <div class="card-body">
+                        <h4 class="card-title">A mais tempo conosco</h4>
+                        <p class="card-text">
+                            @ViewBag.longtime
+                        </p>
+                    </div>
+               
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>

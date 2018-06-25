@@ -1,0 +1,65 @@
+﻿@model DesafioCast.Models.animal
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>animal</h4>
+    <hr />
+
+
+    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:53562/Animal/Details/@Model.Id">
+        Compartilhar Rede Social<span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+    </a>
+
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.raca.nomeraca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.raca.nomeraca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sexo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sexo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dataEntrada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dataEntrada)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,42 @@
+﻿@model DesafioCast.Models.adocao
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>adocao</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.animal.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.animal.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pessoa.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pessoa.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataAdocao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataAdocao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
